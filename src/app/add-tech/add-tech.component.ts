@@ -34,17 +34,26 @@ export class AddTechComponent implements OnInit {
     exp: new FormControl('')
   });
 
+
   onSubmit() {
-    let insertVal : User = {
+
+    let technologies : string = this.profileForm.value.technologies;
+    let tech = technologies.split(';')
+
+    let insertVal = {
       "name": this.profileForm.value.name,
       "email" : this.profileForm.value.email,
       "title" : this.profileForm.value.title,
       "team" : this.profileForm.value.team,
-      "technologies" : this.profileForm.value.technologies,
-      "exp" : this.profileForm.value.exp
+      "technologies" : tech,
+      "exp" : null
     }
     this._userService.putUser(insertVal);
-    console.log(this.profileForm.value);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+
   }
 
 
@@ -59,9 +68,8 @@ export class AddTechComponent implements OnInit {
     let currUser;
     this._userService.getUserById(this.data.UID).subscribe(data => currUser = data);
     console.log(currUser);
-
     // save user document
-    // this._userService.addTech(currUser)
+    this._userService.addTech(currUser)
   }
 
   ngOnInit(): void {
