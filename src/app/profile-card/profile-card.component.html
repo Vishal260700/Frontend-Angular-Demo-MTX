@@ -21,7 +21,7 @@
                 </p>
                 <br>
                 <span *ngFor = "let tech of currUser.technologies" class="technology">{{tech}}</span>
-                <button style="margin-top: 20px;margin-left: 100px;" class="technology" (click) = "openDialog()" mat-button>Add Tech</button>
+                <button style="margin-top: 20px;margin-left: 100px;" class="del" (click) = "delDoc()" mat-button>Delete User</button>
             </div>
         </div>
         

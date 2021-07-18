@@ -22,6 +22,24 @@
 }
 
 
+.del{
+  background-color:  #f1948a ;
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-family: serif;
+  font-size: 15px;
+}
+
+.del:hover{
+  background-color:  #e74c3c ;
+  transition: 250ms all ease-in;
+}
+
+
 .card {
 
   width: 340px;

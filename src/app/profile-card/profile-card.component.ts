@@ -4,6 +4,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 
 import {AddTechComponent} from '../add-tech/add-tech.component';
 
+import {UserService} from '../user.service';
+
 interface User{
   id : string,
   name : string,
@@ -21,7 +23,7 @@ interface User{
 })
 export class ProfileCardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private _userService: UserService) { }
 
   about = true;
   experience = false;
@@ -83,6 +85,10 @@ export class ProfileCardComponent implements OnInit {
         UID : this.currUser.id
       }
     });
+  }
+
+  delDoc(){
+    this._userService.delUserById(this.currUser.id);
   }
 
   ngOnInit() {

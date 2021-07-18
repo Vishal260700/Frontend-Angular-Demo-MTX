@@ -38,6 +38,14 @@ export class UserService {
     return this.http.get(this._url + "/" + queryId);
   }
 
+  // DEL REQUEST - FRONT END DONE
+  delUserById(queryId : string){
+    this.http.delete(this._url + "/delUser/" + queryId).subscribe(data => console.log(data));
+    setTimeout(() => {
+      window.location.reload()
+    }, 1000);
+  }
+
   // PUT REQUEST
   putUser(newUser : User){
     console.log(newUser);
