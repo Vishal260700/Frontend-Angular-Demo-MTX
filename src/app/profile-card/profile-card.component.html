@@ -1,0 +1,90 @@
+<div class="card" data-state="#about">
+    <div class="card-header">
+        <!-- background cover -->
+        <div class="card-cover" style="background-image: url('https://2.bp.blogspot.com/-b_lqelKRB4k/Xj-rBvoSxUI/AAAAAAAACHg/G19lzRiO6qYQmquCqut44r1cMdF53HQ0QCLcBGAsYHQ/s1600/anime3.png')"></div>
+        <!-- Display photo -->
+        <img class="card-avatar" src="https://2.bp.blogspot.com/-b_lqelKRB4k/Xj-rBvoSxUI/AAAAAAAACHg/G19lzRiO6qYQmquCqut44r1cMdF53HQ0QCLcBGAsYHQ/s1600/anime3.png" alt="avatar" />
+        <!-- User name -->
+        <h1 class="card-fullname">{{currUser.name}}</h1>
+        <!-- Title -->
+        <h2 class="card-jobtitle">{{currUser.title}}</h2>
+    </div>
+  
+    <div class="card-main">
+
+        <!-- About Section -->
+        <div [ngClass] = "{'is-active' : about}" class="card-section is-active" id="about">
+            <div class="card-content">
+                <div class="card-subtitle">ABOUT <mat-icon (click) = "openDialog()" style="font-size: 15px; float: right;">edit</mat-icon> </div>
+                <p class="card-desc">
+                Hi there, {{currUser.name}} here, I am familiar with technology frameworks like,
+                </p>
+                <br>
+                <span *ngFor = "let tech of currUser.technologies" class="technology">{{tech}}</span>
+                <button style="margin-top: 20px;margin-left: 100px;" class="technology" (click) = "openDialog()" mat-button>Add Tech</button>
+            </div>
+        </div>
+        
+        <!-- Work Experience Section -->
+        <div [ngClass] = "{'is-active' : experience}" class="card-section" id="experience">
+            <div class="card-content">
+
+                <div class="card-subtitle">
+                    WORK EXPERIENCE <mat-icon (click) = "openDialog()" style="font-size: 15px; float: right;">edit</mat-icon> 
+                </div>
+
+                <div class="card-timeline">
+
+                    <div *ngFor = "let exp of currUser.exp" class="card-item">
+                        <div class="card-item-title">{{exp.position}}</div>
+                        <div class="card-item-desc">{{exp.information}}</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div [ngClass] = "{'is-active' : contact}" class="card-section" id="contact">
+            <div class="card-content">
+
+                <div class="card-subtitle">
+                    CONTACT <mat-icon (click) = "openDialog()" style="font-size: 15px; float: right;">edit</mat-icon> 
+                </div>
+        
+                <div class="card-contact-wrapper">
+                    <div class="card-contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <!-- Address -->
+                        {{currUser.team}}
+                    </div>
+        
+                    <div class="card-contact">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                        <!-- Mail Id -->
+                        {{currUser.email}}
+                    </div>
+
+                </div>
+    
+            </div>
+    
+        </div>
+      
+      <!-- Action Buttons -->
+      <div class="card-buttons">
+        <button (click) = "showAbout()" data-section="#about" [ngClass] = "{'is-active' : about}">ABOUT</button>
+        <button (click) = "showExp()" data-section="#experience" [ngClass] = "{'is-active' : experience}" >EXPERIENCE</button>
+        <button (click) = "showContact()" data-section="#contact" [ngClass] = "{'is-active' : contact}" >CONTACT</button>
+      </div>
+  
+    </div>
+  
+  </div>
