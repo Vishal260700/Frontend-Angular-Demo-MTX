@@ -7,6 +7,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {UserService} from '../user.service';
 
 interface User{
+  id : string,
   name : string,
   email: string,
   title : string,
@@ -23,7 +24,7 @@ interface User{
 export class AddTechComponent implements OnInit {
 
   constructor(private _userService: UserService, 
-    @Inject(MAT_DIALOG_DATA) public data: {UID : string}) {}
+    @Inject(MAT_DIALOG_DATA) public data : User) {}
 
   profileForm = new FormGroup({
     name : new FormControl(''),
@@ -31,7 +32,8 @@ export class AddTechComponent implements OnInit {
     title : new FormControl(''),
     team : new FormControl(''),
     technologies : new FormControl(''),
-    exp: new FormControl('')
+    position : new FormControl(''),
+    information : new FormControl('')
   });
 
 
@@ -46,8 +48,9 @@ export class AddTechComponent implements OnInit {
       "title" : this.profileForm.value.title,
       "team" : this.profileForm.value.team,
       "technologies" : tech,
-      "exp" : null
+      "exp" : [{"position" : this.profileForm.value.position, "information" : this.profileForm.value.information}]
     }
+
     this._userService.putUser(insertVal);
 
     setTimeout(() => {
@@ -56,23 +59,6 @@ export class AddTechComponent implements OnInit {
 
   }
 
-
-  // Add new tech
-
-  addTechForm = new FormGroup({
-    tech : new FormControl('')
-  });
-
-  addNewTech(){
-    // get user document
-    let currUser;
-    this._userService.getUserById(this.data.UID).subscribe(data => currUser = data);
-    console.log(currUser);
-    // save user document
-    this._userService.addTech(currUser)
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

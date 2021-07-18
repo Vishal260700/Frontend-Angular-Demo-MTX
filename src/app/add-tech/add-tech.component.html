@@ -1,7 +1,7 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
     <label for="name">Name</label>
-    <input id="name" type="text" formControlName="name" >
+    <input id="name" type="text" formControlName="name">
 
     <label for="title">Title</label>
     <input id="title" type="text" formControlName="title">
@@ -15,14 +15,11 @@
     <label for="technologies">Technologies</label>
     <input id="technologies" type="text" formControlName = "technologies" placeholder="Type in technologies with ; distinguisher">
 
-    <button type="submit">Submit</button>
+    <label for="experience">Experience</label>
+    <input id="position" type="text" formControlName = "position" placeholder="Position">
+    <input id="information" type="text" formControlName = "information" placeholder="Information">
 
-</form>
 
-<form [formGroup]="addTechForm" (ngSubmit)="addNewTech()">
-
-    <label for="tech">New Tech</label>
-    <input id="tech" type="text" formControlName="tech" >
 
     <button type="submit">Submit</button>
 

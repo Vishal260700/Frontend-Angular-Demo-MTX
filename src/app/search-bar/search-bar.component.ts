@@ -4,7 +4,7 @@ import {ResultCompComponent} from '../result-comp/result-comp.component';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormGroup, FormControl } from '@angular/forms';
-import {UserService} from '../user.service';
+import {UserService} from '../user.service'
 
 @Component({
   selector: 'app-search-bar',

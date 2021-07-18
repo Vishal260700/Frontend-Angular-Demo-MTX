@@ -81,9 +81,7 @@ export class ProfileCardComponent implements OnInit {
   // API for updating/adding data
   openDialog(){
     this.dialog.open(AddTechComponent, {
-      data: {
-        UID : this.currUser.id
-      }
+      data: this.currUser
     });
   }
 
