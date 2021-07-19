@@ -7,12 +7,14 @@ import {LoginComponent} from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
+import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
+const redirectToHome = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
   { path : '', component: WelcomeComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AngularFireAuthGuard], data: {authGuardPipe : redirectToHome} },
   { path: '**', component: ErrorComponent }
 ];
 
