@@ -1,0 +1,22 @@
+
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+
+    <label for="title">New Title</label>
+    <input id="title" type="text" formControlName="title">
+
+    <label for="team">New Team</label>
+    <input id="team" type="text" formControlName="team">
+
+    <label for="technologies">Technologies to add</label>
+    <input id="technologies" type="text" formControlName = "technologies" placeholder="Type in technologies with ; distinguisher">
+
+    <label for="experience">Add New Experience</label>
+    <input id="position" type="text" formControlName = "position" placeholder="Position">
+    <input id="information" type="text" formControlName = "information" placeholder="Information">
+
+
+    <button type="submit">Submit</button>
+
+</form>
+  
+

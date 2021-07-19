@@ -18,6 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 // option
 import {MatSelectModule} from '@angular/material/select'; 
+// grid list
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 // reactive form
 import { ReactiveFormsModule } from '@angular/forms';
@@ -39,6 +41,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
@@ -52,7 +55,8 @@ import { environment } from '../environments/environment';
     LoginComponent,
     DashboardComponent,
     WelcomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,7 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatGridListModule,
     ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

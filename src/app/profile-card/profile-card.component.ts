@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import {AddTechComponent} from '../add-tech/add-tech.component';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 
 import {UserService} from '../user.service';
 
@@ -80,7 +81,7 @@ export class ProfileCardComponent implements OnInit {
 
   // API for updating/adding data
   openDialog(){
-    this.dialog.open(AddTechComponent, {
+    this.dialog.open(UpdateUserComponent, {
       data: this.currUser
     });
   }

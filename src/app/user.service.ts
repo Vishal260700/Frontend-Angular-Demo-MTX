@@ -53,7 +53,7 @@ export class UserService {
   }
 
   // POST REQUEST
-  addTech(updates : any){
+  updateUser(updates : User){
     this.http.post(this._url + "/editUserDetail", updates).subscribe(data => console.log(data));
   }
 
