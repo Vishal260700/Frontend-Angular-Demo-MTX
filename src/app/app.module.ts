@@ -35,6 +35,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -61,8 +66,10 @@ import { ErrorComponent } from './error/error.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    AppRoutingModule
-    
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
