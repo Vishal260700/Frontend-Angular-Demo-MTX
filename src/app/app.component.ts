@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,8 @@ import {UserService} from './user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'frontend';
-  constructor(private _userService: UserService) { }
-
-  allUsers : any;
 
   ngOnInit() {
-    this._userService.getUsers().subscribe(data => this.allUsers = data);
   }
 
 }

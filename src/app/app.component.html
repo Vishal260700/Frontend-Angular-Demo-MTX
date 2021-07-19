@@ -1,12 +1,2 @@
 
-<div>
-  <app-search-bar></app-search-bar>
-</div>
-
-<div style="margin-top: 10vh;">
-  <app-profile-card *ngFor = "let gottenUser of allUsers" [currUser] = "gottenUser" ></app-profile-card>
-</div>
-
-<div>
-  <app-add-user></app-add-user>
-</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+<div class="login-panel" style="margin-top: 20vh;">
+    <h1 class="login-title">
+        <span class="light">Employee</span>Connect
+   </h1>
+    
+    <p class="login-text">Login</p>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <label for="name">Username</label>
+        <input style="margin-bottom: 2vh;" id="name" type="text" formControlName="name">
+    
+        <label for="password">Password</label>
+        <input style="margin-bottom: 5vh;"  id="password" type="password" formControlName="password">
+    
+        <button type="submit" class="login-btn">Login</button>
+    
+    </form>
+    
+    
+   <div class="login-footer">
+     <p>Copyright 2021 EmployeeConnect</p>  
+   </div>
+  </div>

@@ -29,6 +29,11 @@ import { AddTechComponent } from './add-tech/add-tech.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ResultCompComponent } from './result-comp/result-comp.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -38,7 +43,11 @@ import { ResultCompComponent } from './result-comp/result-comp.component';
     AddTechComponent,
     SearchBarComponent,
     AddUserComponent,
-    ResultCompComponent
+    ResultCompComponent,
+    LoginComponent,
+    DashboardComponent,
+    WelcomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +60,8 @@ import { ResultCompComponent } from './result-comp/result-comp.component';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
     
   ],
   providers: [],
